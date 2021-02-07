@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Machine {
+    // Initial coffee machiine state
     private int water = 400;
     private int milk = 540;
     private int coffeeBeans = 120;
@@ -42,15 +43,16 @@ public class Machine {
     }
 
     public void buy(String input) {
+        // Amount of products needed for espresso
         int espressoWater = 250;
         int espressoCoffeeBeans = 16;
         int espressoMoney = 4;
-
+        // Amount of products needed for latte
         int latteWater = 350;
         int latteMilk = 75;
         int latteCoffeeBeans = 20;
         int latteMoney = 7;
-
+        // Amount of products needed for cappuccino
         int cappuccinoWater = 200;
         int cappuccinoMilk = 100;
         int cappuccinoCoffeeBeans = 12;
@@ -132,7 +134,6 @@ public class Machine {
         System.out.print("> ");
         input = scanner.nextInt();
         disposableCups += input;
-        scanner.close();
     }
 
     public void take() {

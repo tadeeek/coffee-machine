@@ -20,6 +20,5 @@ public class CoffeeMachine {
                 break loop;
             }
         }
-        scanner.close();
     }
 }
