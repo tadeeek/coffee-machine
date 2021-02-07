@@ -35,6 +35,9 @@ public class Machine {
                 case "exit":
                     currentState = MachineState.CHOOSEexit;
                     break;
+                default:
+                    System.out.println("Invalid action, try again");
+                    break;
             }
         } else if (currentState == MachineState.CHOOSEcoffee) {
             buy(input);
@@ -113,6 +116,10 @@ public class Machine {
             case "back":
                 currentState = MachineState.CHOOSEaction;
                 break;
+            default:
+                System.out.println("Invalid action, switching to main menu");
+                break;
+
         }
     }
 
