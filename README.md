@@ -1,4 +1,4 @@
-# Tic tac toe
+# Coffee Machine
 
 One of my projects created at hyperskill platform. Program simulates a coffe machine. Machine operates with the folowing products: coffee, milk, sugar, plastic cups and also collects money. When it runs out of any of these products it notifies user. Coffee machine can prepare three types of coffeee: espresso, cappuccino and latte.
 
