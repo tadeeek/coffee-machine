@@ -164,7 +164,7 @@ public class Machine {
     }
 
     public void status() {
-        System.out.println("\n===The coffee machine has:");
+        System.out.println("\n= The coffee machine has:");
         System.out.println(water + " of water");
         System.out.println(milk + " of milk");
         System.out.println(coffeeBeans + " of coffee beans");

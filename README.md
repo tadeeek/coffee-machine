@@ -5,9 +5,14 @@ One of my projects created at hyperskill platform. Program simulates a coffe mac
 ## Table of contents
 
 - [General info](#general-info)
+- [Screencast](#screencast)
 - [Technologies](#technologies)
 - [Status](#status)
 - [Inspiration](#inspiration)
+
+## Screencast
+
+![Coffee Machine screeencast](screencast-coffee-machine.gif)
 
 ## General info
 
