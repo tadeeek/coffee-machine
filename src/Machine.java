@@ -1,12 +1,13 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Machine {
     // Initial coffee machiine state
-    private int water = 400;
-    private int milk = 540;
-    private int coffeeBeans = 120;
-    private int disposableCups = 9;
-    private int money = 550;
+    private int water = 200;
+    private int milk = 200;
+    private int coffeeBeans = 10;
+    private int disposableCups = 5;
+    private int money = 100;
     private MachineState currentState = MachineState.CHOOSEaction;
 
     public MachineState getCurrentState() {
@@ -124,23 +125,37 @@ public class Machine {
     }
 
     public void fill() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Write how many ml of water do you want to add:");
-        System.out.print("> ");
-        int input = scanner.nextInt();
+        System.out.print("\n");
+        int input = 0;
+        input = fillInputValidation("Write how many ml of water do you want to add:");
         water += input;
-        System.out.println("Write how many ml of milk do you want to add:");
-        System.out.print("> ");
-        input = scanner.nextInt();
+        input = fillInputValidation("Write how many ml of milk do you want to add:");
         milk += input;
-        System.out.println("Write how many grams of coffee beans do you want to add: ");
-        System.out.print("> ");
-        input = scanner.nextInt();
+        input = fillInputValidation("Write how many grams of coffee beans do you want to add: ");
         coffeeBeans += input;
-        System.out.println("Write how many disposable cups of coffee beans do you want to add: ");
-        System.out.print("> ");
-        input = scanner.nextInt();
+        input = fillInputValidation("Write how many disposable cups of coffee beans do you want to add: ");
         disposableCups += input;
+    }
+
+    public int fillInputValidation(String message) {
+        Scanner scanner = new Scanner(System.in);
+        int input = 0;
+        boolean correctInput = true;
+
+        theWhile: while (correctInput) {
+            System.out.print(message);
+            System.out.print("\n> ");
+            try {
+                input = scanner.nextInt();
+                correctInput = !correctInput;
+            } catch (InputMismatchException e) {
+                System.out.println("Input should be a number. Please try again \n");
+                input = 0;
+                scanner.nextLine(); // Workaround to consume \n produced by hitting enter if user typed string
+                continue theWhile;
+            }
+        }
+        return input;
     }
 
     public void take() {
@@ -149,7 +164,7 @@ public class Machine {
     }
 
     public void status() {
-        System.out.println("The coffee machine has:");
+        System.out.println("\n===The coffee machine has:");
         System.out.println(water + " of water");
         System.out.println(milk + " of milk");
         System.out.println(coffeeBeans + " of coffee beans");
